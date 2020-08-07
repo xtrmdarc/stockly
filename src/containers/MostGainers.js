@@ -22,6 +22,10 @@ const MostGainers = props => {
 
   return (
     <div>
+      <div className="featureTitle"> 
+        <h2> Most Gainers </h2>
+        <span className="upBlock"> </span>
+      </div>
       { mostGainersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
     </div>
   );
