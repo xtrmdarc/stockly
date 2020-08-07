@@ -7,9 +7,10 @@ const AboveTheFold = () => {
   return (
     <div className="aboveTheFold">
       <header>
-        <img src={logo} alt="stockly logo"/>
+        <img className="logo" src={logo} alt="stockly logo"/>
         <StocksFilter />
       </header>
+      
       <MostGainers />
     </div>
   );

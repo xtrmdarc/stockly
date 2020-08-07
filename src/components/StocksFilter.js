@@ -2,8 +2,8 @@ import React from 'react';
 
 const StocksFilter = () => {
   return (
-    <div>
-      <input type="text" />
+    <div className="stocksSearch">
+      <input className="textField" type="text" placeholder="Search for stocks" />
     </div>
   );
 };

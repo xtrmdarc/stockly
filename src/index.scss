@@ -1,0 +1,34 @@
+$downColor: #E80000;
+$highColor: #18DC20;
+$generalLandingSidePadding: 50px;
+$generalSpace: 16px;
+
+body {
+  margin: 0;
+}
+
+.textField {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.425);
+  padding-bottom: 4px;
+  outline: none;
+}
+
+.aboveTheFold {
+  padding: 0 $generalLandingSidePadding;
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $generalSpace 0;
+    .logo {
+      width: 50px;
+    }
+    .stocksSearch {
+      .textField {
+        width: 180px;
+      }
+    }
+    
+  }
+}
