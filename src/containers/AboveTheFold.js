@@ -12,7 +12,7 @@ const AboveTheFold = () => {
         <StocksFilter />
       </header>
 
-      <div>
+      <div className="featuredMostLists">
         <MostGainers />
         <MostLosers />
       </div>

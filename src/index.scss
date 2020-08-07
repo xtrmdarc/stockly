@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Mulish&display=swap');
+
+
 $downColor: #E80000;
 $highColor: #18DC20;
 $generalLandingSidePadding: 50px;
@@ -21,14 +24,87 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding: $generalSpace 0;
+
     .logo {
-      width: 50px;
+      width: 80px;
     }
+
     .stocksSearch {
       .textField {
         width: 180px;
       }
     }
-    
+  }
+
+  .featuredMostLists {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .featureTitle {
+        margin-bottom: 20px;
+        h2 {
+          font-family: 'Josefin Sans', sans-serif;
+          text-transform: uppercase;
+          font-size: 18px;
+          margin: 0;
+        }
+
+        span {
+          margin-top: 8px;
+          height: 8px;
+          width: 30px;
+          display: block;
+          background-color: black;
+          border-radius: 4px;
+        }
+        
+        .upBlock {
+          background-color: $highColor;
+        }
+
+        .downBlock {
+          background-color: $downColor;
+        }
+      }
+    }
+
+    .featuredStockCard {
+      display: flex;
+      justify-content: space-between;
+      padding: $generalSpace;
+      align-items: flex-end;
+      margin-top: 25px;
+
+      .stockName {
+        margin: 0;
+        font-size: 80px;
+        font-family: 'Josefin Sans', sans-serif;
+        line-height: 40px;
+      }
+
+      .rightSection {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Josefin Sans', sans-serif;
+        align-items: flex-end;
+
+        .stockPrice {
+          font-size: 19px;
+          margin-bottom: 4px;
+        }
+
+        .percentageChange {
+          font-size: 40px;
+          font-weight: 700;
+        }
+      }
+    }
   }
 }
