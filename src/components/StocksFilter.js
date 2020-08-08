@@ -1,9 +1,9 @@
 import React from 'react';
-import StocksApi from '../api/stocksApi';
 
-const StocksFilter = () => {
+const StocksFilter = props => {
   const handleChange = e => {
-    StocksApi.searchByQuery(e.target.value).then( data => console.log(data));
+    const { handleFilterChange } = props;
+    handleFilterChange(e.target.value);
   }
 
   return (

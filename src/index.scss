@@ -51,14 +51,24 @@ body {
     }
   }
 
-  .mainTitle {
-    font-family: 'Josefin Sans', sans-serif;
-    margin: 0;
-    font-size: 80px;
+  .titleHeader {
     margin-top: $generalLandingSidePadding;
-    text-align: right;
-  }
 
+    .announcement {
+      display: block;
+      font-family: 'Josefin Sans', sans-serif;
+      text-align: right;   
+      margin-bottom: $generalSpace; 
+    }
+  
+    .mainTitle {
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 0;
+      font-size: 80px;
+      text-align: right;
+    }
+  }
+  
   .featuredMostLists {
     margin-top: $generalLandingSidePadding;
     display: flex;
