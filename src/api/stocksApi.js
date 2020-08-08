@@ -24,7 +24,6 @@ const StocksApi = (() => {
   }
 
   return { getMostGainersList, getMostLosersList, getLandingStockList, searchByQuery };
-
 })();
 
 export default StocksApi;

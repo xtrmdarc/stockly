@@ -3,7 +3,6 @@ import StocksApi from '../api/stocksApi';
 
 const StocksFilter = () => {
   const handleChange = e => {
-    console.log(e);
     StocksApi.searchByQuery(e.target.value).then( data => console.log(data));
   }
 
