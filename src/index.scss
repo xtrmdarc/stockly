@@ -32,6 +32,7 @@ body {
 
 .aboveTheFold {
   padding: 0 $generalLandingSidePadding;
+
   header {
     display: flex;
     flex-direction: row;
@@ -45,6 +46,7 @@ body {
     .stocksSearch {
       .textField {
         width: 180px;
+        font-size: 18px;
       }
     }
   }
@@ -147,6 +149,8 @@ body {
     background-color: black;
     padding: $generalSpace;
     font-family: 'Mulish', sans-serif;
+    border-right: 1px solid rgba(255, 255, 255, 0.247);
+    border-top: 1px solid rgba(255, 255, 255, 0.247);
 
     .naming {
       display: flex;

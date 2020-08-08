@@ -25,7 +25,6 @@ const StockCard = props => {
           <h3 className="stockSymbol">{stockInfo.symbol}</h3>
           <span className="companyName">{stockInfo.name}</span>
         </div>
-        
         <div className="bottomSection">
           <div className="leftSection">
             <span> <b>DH</b> {stockInfo.dayHigh} USD</span>
