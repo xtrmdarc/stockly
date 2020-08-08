@@ -1,42 +1,28 @@
 import React from 'react';
 import StockCard from '../components/StockCard';
+import StocksApi from '../api/stocksApi';
 
-const StockCardList = () => {
-  const stockList = [
-    {
-      symbol: 'AAPL',
-      name: 'Apple Inc.',
-      price: 449.73000000,
-      changesPercentage: -1.11000000,
-      change: -5.06000000,
-      dayLow: 448.14000000,
-      dayHigh: 453.94000000,
-    },
-    {
-      symbol: 'FB',
-      name: 'Facebook Inc.',
-      price: 449.73000000,
-      changesPercentage: -1.11000000,
-      change: -5.06000000,
-      dayLow: 448.14000000,
-      dayHigh: 453.94000000,
-    },
-    {
-      symbol: 'AAPL',
-      name: 'Apple Inc.',
-      price: 449.73000000,
-      changesPercentage: -1.11000000,
-      change: -5.06000000,
-      dayLow: 448.14000000,
-      dayHigh: 453.94000000,
-    },
-  ];
+class StockCardList extends React.Component  {
+  constructor(props) {
+    super(props);
+    this.stockList = [];
+  }
+  
+  componentDidMount() {
+    StocksApi.getLandingStockList().then( data => {
+      this.stockList = data;
+      this.forceUpdate();
+    });
+  }
 
-  return (
-    <div className="stocksList">
-      {stockList.map(p => <StockCard stockInfo={p}/> )}
-    </div>
-  );
+  render() {
+    return (
+      <div className="stocksList">
+        { this.stockList.map(p => <StockCard stockInfo={p}/>)}
+      </div>
+    );
+  }
+  
 }
 
 export default StockCardList;

@@ -13,7 +13,12 @@ const StocksApi = (() => {
     return new Promise((resolve, reject)  => fetch(url).then(p => p.json().then( data => resolve(data))));
   }
 
-  return { getMostGainersList, getMostLosersList };
+  const getLandingStockList = () => {
+    const url = `${endpoint}/quote/AAPL,FB,GOOG${apiKeyParam}`;
+    return new Promise((resolve, reject)  => fetch(url).then(p => p.json().then( data => resolve(data))));    
+  }
+
+  return { getMostGainersList, getMostLosersList, getLandingStockList };
 
 })();
 
