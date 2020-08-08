@@ -1,34 +1,32 @@
 import React from 'react';
 import StockCard from '../components/StockCard';
+import StocksApi from '../api/stocksApi';
 
-const MostGainers = props => {
+class MostGainers extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.mostGainersArr = [];
+  }
 
-  const mostGainersArr = [
-    {
-      ticker: 'CNDT',
-      changes: 1.583,
-      price: 3.843,
-      changesPercentage: '(+70.04%)',
-      companyName: 'Conduent Incorporated'
-    },
-    {
-      ticker: 'CNDT',
-      changes: 1.583,
-      price: 3.843,
-      changesPercentage: '(+70.04%)',
-      companyName: 'Conduent Incorporated'
-    }
-  ];
-
-  return (
-    <div>
-      <div className="featureTitle"> 
-        <h2> Most Gainers </h2>
-        <span className="upBlock"> </span>
+  componentDidMount() {
+    StocksApi.getMostGainersList().then(data => {
+      this.mostGainersArr = data.slice(0, 3);
+      this.forceUpdate();
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+        <div className="featureTitle"> 
+          <h2> Most Gainers </h2>
+          <span className="upBlock"> </span>
+        </div>
+        { this.mostGainersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
       </div>
-      { mostGainersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
-    </div>
-  );
+    );
+  }
+  
 }
 
 export default MostGainers;
