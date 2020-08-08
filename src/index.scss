@@ -49,8 +49,16 @@ body {
     }
   }
 
+  .mainTitle {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    font-size: 80px;
+    margin-top: $generalLandingSidePadding;
+    text-align: right;
+  }
+
   .featuredMostLists {
-    margin-top: 10%;
+    margin-top: $generalLandingSidePadding;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

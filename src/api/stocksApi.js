@@ -14,7 +14,7 @@ const StocksApi = (() => {
   }
 
   const getLandingStockList = () => {
-    const url = `${endpoint}/quote/AAPL,FB,GOOG${apiKeyParam}`;
+    const url = `${endpoint}/quote/AAPL,FB,GOOG,F,MCD,MSFT${apiKeyParam}`;
     return new Promise((resolve, reject)  => fetch(url).then(p => p.json().then( data => resolve(data))));    
   }
 

@@ -11,7 +11,7 @@ const AboveTheFold = () => {
         <img className="logo" src={logo} alt="stockly logo"/>
         <StocksFilter />
       </header>
-
+      <h1 className="mainTitle">Follow the right stock.</h1>
       <div className="featuredMostLists">
         <MostGainers />
         <MostLosers />
