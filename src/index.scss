@@ -51,96 +51,100 @@ body {
     }
   }
 
-  .titleHeader {
-    margin-top: $generalLandingSidePadding;
-
-    .announcement {
-      display: block;
-      font-family: 'Josefin Sans', sans-serif;
-      text-align: right;   
-      margin-bottom: $generalSpace; 
-    }
+  .mainContent {
+    
+    .titleHeader {
+      margin-top: $generalLandingSidePadding;
   
-    .mainTitle {
-      font-family: 'Josefin Sans', sans-serif;
-      margin: 0;
-      font-size: 80px;
-      text-align: right;
-    }
-  }
-  
-  .featuredMostLists {
-    margin-top: $generalLandingSidePadding;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    & > div {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-
-      .featureTitle {
-        margin-bottom: 20px;
-        h2 {
-          font-family: 'Josefin Sans', sans-serif;
-          text-transform: uppercase;
-          font-size: 18px;
-          margin: 0;
-        }
-
-        span {
-          margin-top: 8px;
-          height: 8px;
-          width: 30px;
-          display: block;
-          background-color: black;
-          border-radius: 4px;
-        }
-        
-        .upBlock {
-          background-color: $highColor;
-        }
-
-        .downBlock {
-          background-color: $downColor;
-        }
+      .announcement {
+        display: block;
+        font-family: 'Josefin Sans', sans-serif;
+        text-align: right;   
+        margin-bottom: $generalSpace; 
       }
-    }
-
-    .featuredStockCard {
-      display: flex;
-      justify-content: space-between;
-      padding: $generalSpace;
-      align-items: flex-end;
-      margin-top: 25px;
-
-      .stockName {
+    
+      .mainTitle {
+        font-family: 'Josefin Sans', sans-serif;
         margin: 0;
         font-size: 80px;
-        font-family: 'Josefin Sans', sans-serif;
-        line-height: 40px;
+        text-align: right;
       }
-
-      .rightSection {
+    }
+    
+    .featuredMostLists {
+      margin-top: $generalLandingSidePadding;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+      & > div {
         display: flex;
         flex-direction: column;
-        font-family: 'Josefin Sans', sans-serif;
+        flex-grow: 1;
+  
+        .featureTitle {
+          margin-bottom: 20px;
+          h2 {
+            font-family: 'Josefin Sans', sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            margin: 0;
+          }
+  
+          span {
+            margin-top: 8px;
+            height: 8px;
+            width: 30px;
+            display: block;
+            background-color: black;
+            border-radius: 4px;
+          }
+          
+          .upBlock {
+            background-color: $highColor;
+          }
+  
+          .downBlock {
+            background-color: $downColor;
+          }
+        }
+      }
+  
+      .featuredStockCard {
+        display: flex;
+        justify-content: space-between;
+        padding: $generalSpace;
         align-items: flex-end;
-
-        .stockPrice {
-          font-size: 19px;
-          margin-bottom: 4px;
+        margin-top: 25px;
+  
+        .stockName {
+          margin: 0;
+          font-size: 80px;
+          font-family: 'Josefin Sans', sans-serif;
+          line-height: 40px;
         }
-
-        .percentageChange {
-          font-size: 40px;
-          font-weight: 700;
+  
+        .rightSection {
+          display: flex;
+          flex-direction: column;
+          font-family: 'Josefin Sans', sans-serif;
+          align-items: flex-end;
+  
+          .stockPrice {
+            font-size: 19px;
+            margin-bottom: 4px;
+          }
+  
+          .percentageChange {
+            font-size: 40px;
+            font-weight: 700;
+          }
+  
         }
-
       }
     }
   }
+  
 }
 
 .stocksList {

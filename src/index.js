@@ -8,7 +8,9 @@ import rootReducer from './reducers/index';
 
 const store  = createStore(rootReducer, {
   displayStockList: [],
+  displayMainContent: true,
 });
+console.log(store);
 
 ReactDOM.render(
   <Provider store={store} > 
