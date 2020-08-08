@@ -4,19 +4,21 @@ const StockCard = props => {
   
   const { featured, stockInfo } = props;
   let renderLayout;
-
+  let up;
   if (featured) {
+    up = stockInfo.changes > 0.00 ? true : false;
     renderLayout = (
       <div className="featuredStockCard">
         <h3 className="stockName">{stockInfo.ticker}</h3>
         <div className="rightSection">
           <span className="stockPrice">{stockInfo.price} <span className="price"> USD</span></span>
-          <span className="percentageChange">{stockInfo.changesPercentage}</span>
+          <span className={`percentageChange ${up ? 'highColor' : 'downColor'}`}>{stockInfo.changesPercentage}</span>
         </div>
       </div>
     );
   }
   else {
+    up = stockInfo.change > 0.00 ? true : false;
     renderLayout = (
       <div className="stockCard">
         <div className="naming">
@@ -31,7 +33,7 @@ const StockCard = props => {
           </div>
           <div className="rightSection">
             <span className="stockPrice" >{stockInfo.price} <span className="currency"> USD</span></span>
-            <span> <span className="change">{stockInfo.change} USD </span><span className="percentageChange">({stockInfo.changesPercentage}%)</span> </span>
+            <span className={up ? 'highColor' : 'downColor'}> <span className="change">{stockInfo.change} USD </span><span className="percentageChange">({stockInfo.changesPercentage}%)</span> </span>
           </div>
         </div>
       </div>

@@ -22,6 +22,14 @@ body {
   font-family: 'Mulish', sans-serif;
 }
 
+.downColor {
+  color: $downColor;
+}
+
+.highColor {
+  color: $highColor;
+}
+
 .aboveTheFold {
   padding: 0 $generalLandingSidePadding;
   header {
