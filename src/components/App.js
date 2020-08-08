@@ -1,9 +1,13 @@
 import React from 'react';
 import AboveTheFold from '../containers/AboveTheFold';
+import StockCardList from '../containers/StockCardList';
 
 const App = () => {
   return (
-    <AboveTheFold />
+    <div>
+      <AboveTheFold />
+      <StockCardList />
+    </div>
   );
 }
 

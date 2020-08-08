@@ -6,6 +6,10 @@ $highColor: #18DC20;
 $generalLandingSidePadding: 50px;
 $generalSpace: 16px;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -15,6 +19,7 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.425);
   padding-bottom: 4px;
   outline: none;
+  font-family: 'Mulish', sans-serif;
 }
 
 .aboveTheFold {
@@ -103,6 +108,82 @@ body {
         .percentageChange {
           font-size: 40px;
           font-weight: 700;
+        }
+
+      }
+    }
+  }
+}
+
+.stocksList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: $generalLandingSidePadding;
+
+  .stockCard {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3);
+    height: 280px;
+    color: white;
+    background-color: black;
+    padding: $generalSpace;
+    font-family: 'Mulish', sans-serif;
+
+    .naming {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70%;
+
+      .stockSymbol {
+        line-height: 40px;
+        margin: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 60px;
+      }
+
+      .companyName {
+        font-family: 'Mulish', sans-serif;
+        text-align: right;
+      }
+    }
+
+    .bottomSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 30%;
+      align-items: center;
+
+      .leftSection {
+        display: flex;
+        flex-direction: column;
+        span {
+          b {
+            display: inline-block;
+            font-family: 'Josefin Sans', sans-serif;
+            width: 30px;
+          }
+        }
+      }
+
+      .rightSection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        
+        .stockPrice {
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 500;
+          font-size: 40px;
+          
+          .currency {
+            font-size: 25px;
+          }
         }
       }
     }
