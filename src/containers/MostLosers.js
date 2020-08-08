@@ -1,34 +1,33 @@
 import React from 'react';
 import StockCard from '../components/StockCard';
+import StocksApi from '../api/stocksApi';
 
-const MostLosers = props => {
+class MostLosers extends React.Component {
+  constructor(props) {
+    super(props);
+    this.mostLosersArr = [];
+  }
 
-  const mostLosersArr = [
-    {
-      ticker: 'CNDT',
-      changes: '1.583',
-      price: '3.843',
-      changesPercentage: '(+70.04%)',
-      companyName: 'Conduent Incorporated'
-    },
-    {
-      ticker: 'CNDT',
-      changes: '1.583',
-      price: '3.843',
-      changesPercentage: '(+70.04%)',
-      companyName: 'Conduent Incorporated'
-    }
-  ];
+  componentDidMount() {
+    StocksApi.getMostLosersList().then( data => {
+      this.mostLosersArr = data.slice(0, 3);
+      this.forceUpdate();
+    });
+  }
 
-  return (
-    <div>
-      <div className="featureTitle"> 
-        <h2> Most Losers </h2>
-        <span className="downBlock"> </span>
+  render() {
+    return (
+      <div>
+        <div className="featureTitle"> 
+          <h2> Most Losers </h2>
+          <span className="downBlock"> </span>
+        </div>
+        { this.mostLosersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
       </div>
-      { mostLosersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
-    </div>
-  );
+    );
+  }
+
+  
 }
 
 export default MostLosers;
