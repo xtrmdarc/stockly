@@ -8,7 +8,7 @@
 
 ## Live Demo
 **API usage is restricted to 250 requests, please be mindful when using the filter search since it
-makes 2 requests per word typed to the API endpoing**
+makes 2 requests per word typed**
 
 [Live Demo Version](https://xtrmdarc-stockly.herokuapp.com/#/)
 ![above the fold image](./src/assets/img/above_the_fold.png)
