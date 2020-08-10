@@ -6,20 +6,20 @@ class MostLosers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostLosersArr: []
+      mostLosersArr: [],
     };
   }
 
   componentDidMount() {
     StocksApi.getMostLosersList().then(data => {
       this.setState({
-        mostLosersArr: data.slice(0, 3)
+        mostLosersArr: data.slice(0, 3),
       });
     });
   }
 
   render() {
-    const {mostLosersArr} = this.state;
+    const { mostLosersArr } = this.state;
     return (
       <div>
         <div className="featureTitle">
