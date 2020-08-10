@@ -9,7 +9,7 @@ class MostLosers extends React.Component {
   }
 
   componentDidMount() {
-    StocksApi.getMostLosersList().then( data => {
+    StocksApi.getMostLosersList().then(data => {
       this.mostLosersArr = data.slice(0, 3);
       this.forceUpdate();
     });
@@ -18,14 +18,14 @@ class MostLosers extends React.Component {
   render() {
     return (
       <div>
-        <div className="featureTitle"> 
+        <div className="featureTitle">
           <h2> Most Losers </h2>
           <span className="downBlock"> </span>
         </div>
-        { this.mostLosersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
+        { this.mostLosersArr.map(p => <StockCard featured stockInfo={p} key={p.ticker} />) }
       </div>
     );
-  } 
+  }
 }
 
 export default MostLosers;

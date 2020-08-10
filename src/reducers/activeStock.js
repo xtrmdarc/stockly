@@ -1,8 +1,7 @@
-import { SET_ACTIVE_STOCK } from "../actions";
-
+import { SET_ACTIVE_STOCK } from '../actions';
 
 const activeStockReducer = (state = null, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case SET_ACTIVE_STOCK: {
       return action.activeStock;
     }

@@ -1,19 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import StockCard from '../components/StockCard';
 import StocksApi from '../api/stocksApi';
-import { connect } from 'react-redux';
-import { filterStocks } from '../actions';
-import { setActiveStock } from '../actions';
+import { filterStocks, setActiveStock } from '../actions';
 
-class StockCardList extends React.Component  {
+class StockCardList extends React.Component {
   constructor(props) {
     super(props);
     this.handleStockCardClick = this.handleStockCardClick.bind(this);
   }
-  
+
   componentDidMount() {
     const { updateStocksList } = this.props;
-    StocksApi.getLandingStockList().then( data => {
+    StocksApi.getLandingStockList().then(data => {
       updateStocksList(data);
     });
   }
@@ -27,11 +27,23 @@ class StockCardList extends React.Component  {
     const { stockList } = this.props;
     return (
       <div className="stocksList">
-        { stockList.map(p => <StockCard stockInfo={p} handleStockCardClick={this.handleStockCardClick} />)}
+        { stockList.map(p => (
+          <StockCard
+            stockInfo={p}
+            key={p.symbol}
+            handleStockCardClick={this.handleStockCardClick}
+          />
+        ))}
       </div>
     );
   }
 }
+
+StockCardList.propTypes = {
+  updateStocksList: PropTypes.func.isRequired,
+  setActiveStock: PropTypes.func.isRequired,
+  stockList: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 const mapStateToProps = state => ({
   stockList: state.stocks,

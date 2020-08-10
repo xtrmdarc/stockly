@@ -1,7 +1,7 @@
-import { FILTER_STOCKS } from "../actions";
+import { FILTER_STOCKS } from '../actions';
 
 const stocksReducer = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case FILTER_STOCKS: {
       return action.stocks;
     }
