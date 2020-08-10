@@ -33,21 +33,28 @@ class StockDetail extends React.Component {
     return (
       <div className="stockDetail">
         <div className="topSection" >
-          <div className="descItem">
-            <h4>Exchange</h4>
-            <span>{activeStock.exchange}</span>
+          <div className="pageName">
+            <h2>
+              Stock detail <br /> page
+            </h2>
           </div>
-          <div className="descItem">
-            <h4>MARKET CAPITALIZATION</h4>
-            <span>{formatterCur.format(activeStock.marketCap)} USD</span>
-          </div>
-          <div className="descItem">
-            <h4>VOLUME</h4>
-            <span>{formatterNum.format(activeStock.volume)}</span>
-          </div>
-          <div className="descItem">
-            <h4>OPEN</h4>
-            <span>{formatterCur.format(activeStock.open)} USD</span>
+          <div>
+            <div className="descItem">
+              <h4>Exchange</h4>
+              <span>{activeStock.exchange}</span>
+            </div>
+            <div className="descItem">
+              <h4>MARKET CAPITALIZATION</h4>
+              <span>{formatterCur.format(activeStock.marketCap)} USD</span>
+            </div>
+            <div className="descItem">
+              <h4>VOLUME</h4>
+              <span>{formatterNum.format(activeStock.volume)}</span>
+            </div>
+            <div className="descItem">
+              <h4>OPEN</h4>
+              <span>{formatterCur.format(activeStock.open)} USD</span>
+            </div>
           </div>
         </div>
         <div className="bottomSection">

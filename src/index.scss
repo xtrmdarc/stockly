@@ -59,6 +59,10 @@ header {
     .textField {
       width: 180px;
       font-size: 18px;
+      background-image: url('./assets/img/SearchIcon.svg');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 100% 3px;
     }
   }
 }
@@ -271,8 +275,10 @@ a {
     .rightSection {
       display:  flex;
       flex-direction: column;
+      justify-content: flex-end;
       align-items: flex-end;
       font-family: 'Josefin Sans', sans-serif;
+
       .stockPrice {
         @include stockPrice();
         font-size: 80px;
@@ -289,9 +295,20 @@ a {
 
   .topSection {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     margin-bottom: $generalLandingSidePadding;
+
+    .pageName {
+      margin: 0;
+
+      h2 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 50px;
+        margin: 0;
+      }
+    }
 
     .descItem {
       display: flex;
@@ -312,5 +329,4 @@ a {
       }
     }
   }
-
 }
