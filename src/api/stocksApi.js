@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const StocksApi = (() => {
   const endpoint = 'https://financialmodelingprep.com/api/v3';
-  const apiKeyParam = 'apikey=d42d34d5a604f11e202ef405a7ccff02';
+  const apiKeyParam = 'apikey=044088446af1280f700192ec452f459d';
 
   const getMostGainersList = () => {
     const url = `${endpoint}/gainers?${apiKeyParam}`;
