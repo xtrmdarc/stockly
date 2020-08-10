@@ -5,24 +5,28 @@ import StocksApi from '../api/stocksApi';
 class MostLosers extends React.Component {
   constructor(props) {
     super(props);
-    this.mostLosersArr = [];
+    this.state = {
+      mostLosersArr: []
+    };
   }
 
   componentDidMount() {
     StocksApi.getMostLosersList().then(data => {
-      this.mostLosersArr = data.slice(0, 3);
-      this.forceUpdate();
+      this.setState({
+        mostLosersArr: data.slice(0, 3)
+      });
     });
   }
 
   render() {
+    const {mostLosersArr} = this.state;
     return (
       <div>
         <div className="featureTitle">
           <h2> Most Losers </h2>
           <span className="downBlock"> </span>
         </div>
-        { this.mostLosersArr.map(p => <StockCard featured stockInfo={p} key={p.ticker} />) }
+        { mostLosersArr.map(p => <StockCard featured stockInfo={p} key={p.ticker} />) }
       </div>
     );
   }

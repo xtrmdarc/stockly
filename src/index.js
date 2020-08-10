@@ -7,7 +7,7 @@ import App from './components/App';
 import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer, {
-  displayStockList: [],
+  stocks: [],
   displayMainContent: true,
   activeStock: {},
 });
