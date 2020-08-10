@@ -1,8 +1,9 @@
 
-<div style="display:flex; justify-content: center; margin-bottom: 20px">
-  <img src="./src/assets/img/Logo.svg">
+<div style="display:flex; justify-content: center; margin-bottom: 20px; text-align: center">
+  <img src="./src/assets/img/Logo.svg" style="margin-bottom: 20px;">
 </div>
 
+# Description
 > Stockly is the go to website to follow / search stocks daily. This is a React based application that fetches a live updated Stocks API to retrieve precise data. This project consists on 2 pages. On the one hand, we have a master page where we can visualize the Most Gainers and Most Losers Lists, and also a main Stocks List which can be filtered. On the other hand, we have a Stock Detail page. Whenever you click on an item on the Stock List, you will be redirected to the Stock Detail page using React Router.
 
 ## Live Demo
