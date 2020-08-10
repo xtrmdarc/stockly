@@ -3,10 +3,12 @@ import StockCard from '../components/StockCard';
 import StocksApi from '../api/stocksApi';
 import { connect } from 'react-redux';
 import { filterStocks } from '../actions';
+import { setActiveStock } from '../actions';
 
 class StockCardList extends React.Component  {
   constructor(props) {
     super(props);
+    this.handleStockCardClick = this.handleStockCardClick.bind(this);
   }
   
   componentDidMount() {
@@ -16,11 +18,16 @@ class StockCardList extends React.Component  {
     });
   }
 
+  handleStockCardClick(stock) {
+    const { setActiveStock } = this.props;
+    setActiveStock(stock);
+  }
+
   render() {
     const { stockList } = this.props;
     return (
       <div className="stocksList">
-        { stockList.map(p => <StockCard stockInfo={p}/>)}
+        { stockList.map(p => <StockCard stockInfo={p} handleStockCardClick={this.handleStockCardClick} />)}
       </div>
     );
   }
@@ -32,6 +39,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   updateStocksList: stocks => dispatch(filterStocks(stocks)),
+  setActiveStock: stock => dispatch(setActiveStock(stock)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockCardList);

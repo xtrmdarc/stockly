@@ -9,6 +9,7 @@ import rootReducer from './reducers/index';
 const store  = createStore(rootReducer, {
   displayStockList: [],
   displayMainContent: true,
+  activeStock: {},
 });
 console.log(store);
 

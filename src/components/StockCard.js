@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StockCard = props => {
   
-  const { featured, stockInfo } = props;
+  const { featured, stockInfo, handleStockCardClick } = props;
+
+  const handleOnClick = () => {
+    handleStockCardClick(stockInfo);
+  };
+
   let renderLayout;
   let up;
   if (featured) {
@@ -20,7 +26,7 @@ const StockCard = props => {
   else {
     up = stockInfo.change > 0.00 ? true : false;
     renderLayout = (
-      <div className="stockCard">
+      <Link className="stockCard" to={`/stocks/${stockInfo.symbol}`} onClick={handleOnClick} >
         <div className="naming">
           <h3 className="stockSymbol">{stockInfo.symbol}</h3>
           <span className="companyName">{stockInfo.name}</span>
@@ -35,7 +41,7 @@ const StockCard = props => {
             <span className={up ? 'highColor' : 'downColor'}> <span className="change">{stockInfo.change} USD </span><span className="percentageChange">({stockInfo.changesPercentage}%)</span> </span>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 

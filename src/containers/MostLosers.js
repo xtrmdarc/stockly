@@ -25,9 +25,7 @@ class MostLosers extends React.Component {
         { this.mostLosersArr.map(p => <StockCard featured={true} stockInfo={p} />) }
       </div>
     );
-  }
-
-  
+  } 
 }
 
 export default MostLosers;
