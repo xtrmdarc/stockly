@@ -13,7 +13,7 @@ const StockCard = props => {
   if (featured) {
     up = stockInfo.changes > 0.00;
     renderLayout = (
-      <div className="featuredStockCard">
+      <div className="featuredStockCard" data-testid="featuredStock" >
         <h3 className="stockName">{stockInfo.ticker}</h3>
         <div className="rightSection">
           <span className="stockPrice">
@@ -28,7 +28,7 @@ const StockCard = props => {
   } else {
     up = stockInfo.change > 0.00;
     renderLayout = (
-      <Link className="stockCard" to={`/stocks/${stockInfo.symbol}`} onClick={handleOnClick}>
+      <Link className="stockCard" to={`/stocks/${stockInfo.symbol}`} onClick={handleOnClick} data-testid="generalStock">
         <div className="naming">
           <h3 className="stockSymbol">{stockInfo.symbol}</h3>
           <span className="companyName">{stockInfo.name}</span>

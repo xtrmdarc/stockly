@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import AboveTheFold from '../containers/AboveTheFold';
 import StockCardList from '../containers/StockCardList';
-import Header from './Header';
+import Header from '../containers/Header';
 import StockDetail from './StockDetail';
 
 const App = () => (

@@ -9,7 +9,7 @@ const AboveTheFold = props => {
 
   return (
     <div className="aboveTheFold">
-      <div className="mainContent" style={{ display: displayMainContent ? 'block' : 'none' }}>
+      <div className="mainContent" style={{ display: displayMainContent ? 'block' : 'none' }} data-testid="mainContent" >
         <div className="titleHeader">
           <span className="announcement">Currently supporting NASDAQ</span>
           <h1 className="mainTitle">Follow the right stock.</h1>

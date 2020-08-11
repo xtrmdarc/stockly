@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import StocksFilter from './StocksFilter';
+import StocksFilter from '../components/StocksFilter';
 import StocksApi from '../api/stocksApi';
 import { filterStocks, toggleDisplayMain } from '../actions';
 import logo from '../assets/img/Logo.svg';
