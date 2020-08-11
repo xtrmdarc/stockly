@@ -1,15 +1,15 @@
 import '@testing-library/jest-dom';
 
 import React from 'react';
-import {render as rtlRender, screen, fireEvent} from '@testing-library/react';
+import { render as rtlRender, screen } from '@testing-library/react';
 import {
-  HashRouter as Router, Switch, Route,
+  HashRouter as Router,
 } from 'react-router-dom';
-import Header from '../containers/Header';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import Header from '../containers/Header';
 import rootReducer from '../reducers';
-
+/* eslint-disable */
 function render(
   ui,
   {
@@ -22,12 +22,21 @@ function render(
     ...renderOptions
   } = {},
 ) {
-  function Wrapper({children}) {
-    return <Provider store={store}><Router > {children} </Router > </Provider>
+  function Wrapper({ children }) {
+    return (
+      <Provider store={store}>
+        <Router>
+          {' '}
+          {children}
+          {' '}
+        </Router>
+        {' '}
+      </Provider>
+    );
   }
-  return rtlRender(ui, {wrapper: Wrapper, ...renderOptions})
+  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
-
+/* eslint-enable */
 test('show logo image when header is rendered', () => {
   render(<Header />);
   expect(screen.findByAltText('stockly logo')).toBeDefined();

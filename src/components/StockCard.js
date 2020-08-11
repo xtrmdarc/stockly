@@ -13,7 +13,7 @@ const StockCard = props => {
   if (featured) {
     up = stockInfo.changes > 0.00;
     renderLayout = (
-      <div className="featuredStockCard" data-testid="featuredStock" >
+      <div className="featuredStockCard" data-testid="featuredStock">
         <h3 className="stockName">{stockInfo.ticker}</h3>
         <div className="rightSection">
           <span className="stockPrice">
