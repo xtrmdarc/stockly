@@ -14,7 +14,11 @@ const Header = props => {
 
     if (query.trim().length > 0) {
       toggleDisplayMain(false);
-      StocksApi.searchByQuery(query).then(data => filterStocksByQuery(data));
+      StocksApi.searchByQuery(query).then(data => {
+        if (data.error) filterStocksByQuery([]);
+
+        else filterStocksByQuery(data);
+      });
     } else {
       toggleDisplayMain(true);
       StocksApi.getLandingStockList().then(data => filterStocksByQuery(data));
