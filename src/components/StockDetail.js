@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { setActiveStock } from '../actions';
 import StocksApi from '../api/stocksApi';
 
 class StockDetail extends React.Component {
@@ -16,7 +15,7 @@ class StockDetail extends React.Component {
     /* eslint-enable react/destructuring-assignment */
     StocksApi.quoteBySymbol(symbol).then(data => {
       this.setState({
-        activeStock: data
+        activeStock: data,
       });
     });
   }

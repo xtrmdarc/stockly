@@ -13,7 +13,7 @@ class MostLosers extends React.Component {
   componentDidMount() {
     StocksApi.getMostLosersList().then(data => {
       const newState = data['Error Message'] ? [] : data;
-      
+
       this.setState({
         mostLosersArr: newState.slice(0, 3),
       });
