@@ -1,23 +1,28 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setActiveStock } from '../actions';
 import StocksApi from '../api/stocksApi';
 
 class StockDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeStock: {} };
+  }
+
   componentDidMount() {
-    const { setActiveStock } = this.props;
     /* eslint-disable react/destructuring-assignment */
     const { symbol } = this.props.match.params;
     /* eslint-enable react/destructuring-assignment */
     StocksApi.quoteBySymbol(symbol).then(data => {
-      setActiveStock(data);
+      this.setState({
+        activeStock: data
+      });
     });
   }
 
   render() {
-    const { activeStock } = this.props;
+    const { activeStock } = this.state;
     const up = activeStock.change > 0.00;
     const formatterCur = new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -110,27 +115,9 @@ class StockDetail extends React.Component {
 }
 
 StockDetail.propTypes = {
-  setActiveStock: PropTypes.func.isRequired,
-  activeStock: PropTypes.objectOf({
-    marketCap: PropTypes.number.isRequired,
-    volume: PropTypes.number.isRequired,
-    change: PropTypes.number.isRequired,
-    changesPercentage: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    symbol: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  }).isRequired,
   /* eslint-disable react/forbid-prop-types */
   match: PropTypes.object.isRequired,
   /* eslint-enable react/forbid-prop-types */
 };
 
-const mapStateToProps = state => ({
-  activeStock: state.activeStock,
-});
-
-const mapDispatchToProps = dispatch => ({
-  setActiveStock: stock => dispatch(setActiveStock(stock)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(StockDetail));
+export default withRouter(StockDetail);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import MostGainers from './MostGainers';
-import MostLosers from './MostLosers';
+import MostGainers from '../components/MostGainers';
+import MostLosers from '../components/MostLosers';
 
 const AboveTheFold = props => {
   const { displayMainContent } = props;

@@ -1,5 +1,5 @@
 import React from 'react';
-import StockCard from '../components/StockCard';
+import StockCard from './StockCard';
 import StocksApi from '../api/stocksApi';
 
 class MostGainers extends React.Component {
@@ -12,8 +12,10 @@ class MostGainers extends React.Component {
 
   componentDidMount() {
     StocksApi.getMostGainersList().then(data => {
+      const newState = data['Error Message'] ? [] : data;
+
       this.setState({
-        mostGainersArr: data.slice(0, 3),
+        mostGainersArr: newState.slice(0, 3),
       });
     });
   }
