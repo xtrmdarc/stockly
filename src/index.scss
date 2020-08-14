@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Mulish&display=swap');
+
+$downColor: #e80000;
+$highColor: #18dc20;
+$generalLandingSidePadding: 50px;
+$generalSpace: 16px;
+$headerHeight: 62px;
+
+@mixin stockSymbol () {
+  line-height: 40px;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+}
+
+@mixin stockPrice() {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.textField {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.425);
+  padding-bottom: 4px;
+  outline: none;
+  font-family: 'Mulish', sans-serif;
+}
+
+.downColor {
+  color: $downColor;
+}
+
+.highColor {
+  color: $highColor;
+}
+
+header {
+  padding: $generalSpace $generalLandingSidePadding;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: $headerHeight;
+
+  .logo {
+    width: 80px;
+  }
+
+  .stocksSearch {
+    .textField {
+      width: 180px;
+      font-size: 18px;
+      background-image: url('./assets/img/SearchIcon.svg');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 100% 3px;
+    }
+  }
+}
+
+a {
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.aboveTheFold {
+  padding: 0 $generalLandingSidePadding;
+
+  .mainContent {
+    .titleHeader {
+      margin-top: $generalLandingSidePadding;
+
+      .announcement {
+        display: block;
+        font-family: 'Josefin Sans', sans-serif;
+        text-align: right;
+        margin-bottom: $generalSpace;
+      }
+
+      .mainTitle {
+        font-family: 'Josefin Sans', sans-serif;
+        margin: 0;
+        font-size: 60px;
+        text-align: right;
+      }
+    }
+
+    .featuredMostLists {
+      margin-top: $generalLandingSidePadding;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .featureTitle {
+          margin-bottom: 20px;
+
+          h2 {
+            font-family: 'Josefin Sans', sans-serif;
+            text-transform: uppercase;
+            font-size: 16px;
+            margin: 0;
+          }
+
+          span {
+            margin-top: 8px;
+            height: 8px;
+            width: 30px;
+            display: block;
+            background-color: black;
+            border-radius: 4px;
+          }
+
+          .upBlock {
+            background-color: $highColor;
+          }
+
+          .downBlock {
+            background-color: $downColor;
+          }
+        }
+      }
+
+      .featuredStockCard {
+        display: flex;
+        justify-content: space-between;
+        padding: $generalSpace;
+        align-items: flex-end;
+        margin-top: 25px;
+
+        .stockName {
+          margin: 0;
+          font-size: 60px;
+          font-family: 'Josefin Sans', sans-serif;
+          line-height: 40px;
+        }
+
+        .rightSection {
+          display: flex;
+          flex-direction: column;
+          font-family: 'Josefin Sans', sans-serif;
+          align-items: flex-end;
+
+          .stockPrice {
+            font-size: 19px;
+            margin-bottom: 4px;
+          }
+
+          .percentageChange {
+            font-size: 40px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stocksList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: $generalLandingSidePadding;
+
+  /* stylelint-disable no-descending-specificity */
+  .stockCard {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3);
+    height: 280px;
+    color: white;
+    background-color: black;
+    padding: $generalSpace;
+    font-family: 'Mulish', sans-serif;
+    border-right: 1px solid rgba(255, 255, 255, 0.247);
+    border-top: 1px solid rgba(255, 255, 255, 0.247);
+
+    .naming {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70%;
+
+      .stockSymbol {
+        line-height: 40px;
+        margin: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 60px;
+      }
+
+      .companyName {
+        font-family: 'Mulish', sans-serif;
+        text-align: right;
+      }
+    }
+
+    .bottomSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 30%;
+      align-items: flex-end;
+
+      .leftSection {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          b {
+            display: inline-block;
+            font-family: 'Josefin Sans', sans-serif;
+            width: 30px;
+          }
+        }
+      }
+
+      .rightSection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .stockPrice {
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 500;
+          font-size: 30px;
+
+          .currency {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stockDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100vh - #{$headerHeight});
+  padding: $generalLandingSidePadding;
+
+  .bottomSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .stockSymbol {
+      @include stockSymbol();
+
+      font-size: 120px;
+      line-height: 90px;
+    }
+
+    .companyName {
+      font-family: 'Mulish', sans-serif;
+      font-size: 30px;
+    }
+
+    .rightSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-family: 'Josefin Sans', sans-serif;
+
+      .stockPrice {
+        @include stockPrice();
+
+        font-size: 80px;
+
+        .currency {
+          font-size: 30px;
+        }
+      }
+
+      .changePrice {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .topSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: $generalLandingSidePadding;
+
+    .pageName {
+      margin: 0;
+
+      h2 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 50px;
+        margin: 0;
+      }
+    }
+
+    .descItem {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      h4 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      span {
+        font-family: 'Mulish', sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+    }
+  }
+}
+/* stylelint-enable no-descending-specificity */
