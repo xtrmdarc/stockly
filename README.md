@@ -4,7 +4,7 @@
 </div>
 
 # Description
-> Stockly is the go to website to follow / search stocks daily. This is a React based application that fetches a live updated Stocks API to retrieve precise data. This project consists on 2 pages. On the one hand, we have a master page where we can visualize the Most Gainers and Most Losers Lists, and also a main Stocks List which can be filtered. On the other hand, we have a Stock Detail page. Whenever you click on an item on the Stock List, you will be redirected to the Stock Detail page using React Router.
+> Stockly is the go-to website to follow/search stocks daily. This is a React-based application that fetches a live updated Stocks API to retrieve precise data. This project consists of 2 pages. On the one hand, we have a master page where we can visualize the Most Gainers and Most Losers Lists, and also the main Stocks List which can be filtered. On the other hand, we have a Stock Detail page. Whenever you click on an item on the Stock List, you will be redirected to the Stock Detail page using React Router.
 
 ## Live Demo
 **API usage is restricted to 250 requests, please be mindful when using the filter search since it
@@ -30,7 +30,7 @@ makes 2 requests per word typed**
 ## How to install locally
 
 - Clone this project into your local environment. 
-- Run the command `npm install` to install all the required dependecies.
+- Run the command `npm install` to install all the required dependencies.
 - Run the command `npm start`
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -75,7 +75,7 @@ Your app is ready to be deployed!
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/xtrmdarc/stockly/issues).
 
